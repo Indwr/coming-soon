@@ -24,12 +24,12 @@
     <!-- Template Favicon & Icons End -->
 
     <!-- Facebook Metadata Start -->
-    <meta property="og:image:height" content="1200">
+    <!-- <meta property="og:image:height" content="1200">
     <meta property="og:image:width" content="1200">
-    <meta property="og:title" content="crypto_boomming - Coming Soon Template">
+    <meta property="og:title" content="crypto_boomming">
     <meta property="og:description" content="Axio - awesome coming soon template to kick-start your project">
     <meta property="og:url" content="http://mixdesign.club/themeforest/axio/">
-    <meta property="og:image" content="http://mixdesign.club/themeforest/axio/img/favicon/og-image.jpg">
+    <meta property="og:image" content="http://mixdesign.club/themeforest/axio/img/favicon/og-image.jpg"> -->
     <!-- Facebook Metadata End -->
 
     <!-- Template Styles Start -->
@@ -45,6 +45,33 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#B247B2">
     <!-- Custom Browser Color End -->
 
+    <style>
+      .timer-card{
+  border: 1px solid #fff;
+  display: inline-block;
+  background-color: #000;
+  border-radius: 20px;
+  text-align: center; 
+  color: white;
+   font-size: 60px; 
+   margin-top: 0px;
+}
+@media only screen and (max-width: 576px) {
+  .timer-card{
+ 
+     font-size: 25px ; 
+     margin-top: 50px;
+     padding: 5px;
+    
+  }
+  .headline__btnholder{
+    text-align: center;
+  }
+}
+
+
+    </style>
+
   </head>
 
   <body>
@@ -53,7 +80,7 @@
     <div class="loader">
         <div class="loader__content">
           <div class="loader__logo slideInDown">
-            <img src="img/logo-loader.svg" alt="crypto_boomming Coming Soon Template">
+            <img src="img/logo-loader.svg" alt="">
           </div>
           <div class="loader__caption slideInUp">
             <p class="loading-text">Loading</p>
@@ -111,10 +138,9 @@
               <!-- Logo End -->
 
               <!-- Menu Trigger Start - Visible on Mobile -->
-              <a href="#0" id="menu-trigger" class="menu-trigger">
-                <!-- <i class="fa-solid fa-bars"></i> -->
+              <!-- <a href="#0" id="menu-trigger" class="menu-trigger">
                  <img style="width: 40px; margin-top: 5px;" src="all-social/togle36-365828_navbar-toggle-icon-menu-hamburger-png-white-removebg-preview.png" alt="">
-              </a>
+              </a> -->
               <!-- Menu Trigger End - Visible on Mobile -->
 
             </div>
@@ -166,6 +192,9 @@
                 <a href="https://t.me/crypto_boomingofficial" class="button button-solid-light">
                   <span class="button-caption">Notify me</span>
                 </a>
+              </div>
+              <div class="timer-cards d-flex justify-content-center">
+                <h3 class="timer-card px-2 px-3" id="timer"></h3>
               </div>
             </div>
             <!-- Intro Headline End -->
@@ -828,6 +857,46 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNMDtmEsvSevM4ztfsbhLfLNZhKHCvWXk"></script>
     <!-- Load Scripts End -->
 
+
+     
+ <script>
+ // Set the date we're counting down to
+         var countDownDate = new Date(Date.UTC(2025, 0, 10, 1, 0, 0)).getTime(); // Note: months are 0-indexed (November is 10)
+
+        // // Update the count down every 1 second
+         var x = setInterval(function () {
+
+        //     // Get today's date and time
+             var now = new Date().getTime();
+
+        //     // Find the distance between now and the count down date
+             var distance = countDownDate - now;
+             
+             console.log(distance);
+
+             // Time calculations for days, hours, minutes and seconds
+              var days = Math.floor(distance / (1000 * 60  * 60 * 24));
+              var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+ 
+            // console.log(days);
+            
+        //     // Output the result in an element with id="demo"
+             document.getElementById("timer").innerHTML = days + "d - " + hours + "h - "
+                 + minutes + "m - " + seconds + "s ";
+
+        //     // If the count down is over, write some text 
+             if (distance < 0) {
+                 clearInterval(x);
+                 document.getElementById("timer").innerHTML = "EXPIRED";
+                 document.getElementById("demo").style.display = "none";
+                 document.getElementById("pdfSection").style.display = "block";
+                 document.getElementById("comingSoon").textContent = "Download PDF";
+             }
+         }, 1000);
+       
+      </script> 
   </body>
 
 </html>
